@@ -52,14 +52,7 @@ PlanTonic solves this by combining **plant recognition** with **practical care s
 ---
 
 ## 📂 Project Structure (For The Curious)
-PlanTonic/
-├── model/ # AI models (plant + disease)
-├── images/ # Screenshots for README
-├── json/ # Mapping for plant names
-├── train.py # AI training script
-├── test.py # Optional testing script
-└── README.md # This file
-
+<pre> <code> ``` PlanTonic/ ├── model/ # AI models (plant + disease) ├── images/ # Screenshots for README ├── json/ # Mapping for plant names ├── train.py # AI training script ├── test.py # Optional testing script └── README.md # This file ``` </code> </pre>
 ---
 
 ## 🏗️ System Overview
