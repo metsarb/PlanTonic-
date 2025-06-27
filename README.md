@@ -1,71 +1,118 @@
-🌱 PlanTonic: AI-Powered Houseplant Identification App
+# 🌿 PlanTonic - Houseplant Recognition & Care Guide App
 
-PlanTonic is a lightweight mobile application designed to identify ornamental houseplants from images and provide care recommendations based on their needs. The model is trained using TensorFlow and MobileNetV3Large, and optimized for mobile deployment via TFLite.
+PlanTonic is a mobile application that helps users **identify indoor ornamental plants** using a photo, and gives them **simple care tips** based on their needs.
 
-🚀 Features
-🌿 Detects indoor ornamental plant species from images
-💡 Offers care tips: light requirements, watering frequency, temperature needs
-⚡ Mobile-optimized model (TFLite format, CPU-compatible)
-🔁 External data augmentation for better generalization
-📊 Balanced training with real-time validation and overfitting prevention
-🧠 Technologies Used
-TensorFlow / Keras
-MobileNetV3Large (pre-trained & fine-tuned)
-Python (3.9+)
-PIL / OpenCV
-ImageDataGenerator
-TFLite conversion
-NumPy / Matplotlib / Scikit-learn
-📁 Directory Structure
+It uses artificial intelligence to recognize plants, even when the user doesn't know their name. The goal is to make plant care easier and more enjoyable — especially for beginners!
+
+---
+
+## 📱 How It Works
+
+1. 📷 Take or upload a photo of your plant
+2. 🧠 The app identifies the plant species
+3. 💧 You receive easy care instructions:
+   - How much water it needs
+   - Whether it likes sunlight or shade
+   - Ideal temperature conditions
+
+---
+
+## 🧠 What’s Under the Hood (In Simple Terms)
+
+This app uses a small, fast AI model trained to "look" at plant images and recognize which species they belong to.
+
+- The model was trained using thousands of plant images.
+- It can run directly on your phone (no internet needed).
+- It doesn't collect or send any personal data — all recognition is done on the device.
+
+Even though the AI part is complex, the **user experience is very simple**.
+
+---
+
+## 🎯 Why This App?
+
+Many people buy houseplants, but they don’t know:
+
+- What kind of plant it is
+- How often to water it
+- Why its leaves are turning yellow
+
+PlanTonic solves this by combining **plant recognition** with **practical care suggestions**.
+
+---
+
+## 🖼️ Example Screenshots
+
+
+| Plant Recognition | Care Suggestions |
+|-------------------|------------------|
+|<img width="237" alt="Screenshot 2025-06-27 at 19 43 43" src="https://github.com/user-attachments/assets/4b022979-4a7b-4987-851f-be33565cb4bd" /> | <img width="209" alt="Screenshot 2025-06-27 at 19 44 20" src="https://github.com/user-attachments/assets/093213b2-108f-498b-bb37-a049f2c97dc6" /> |
+
+
+---
+
+## 📂 Project Structure (For The Curious)
 PlanTonic/
-│
-├── train.py                  # Model training script
-├── test.py                   # Inference script (optional)
-├── model/
-│   └── plant_model.tflite    # Converted TFLite model
-├── images/
-│   ├── accuracy_plot.png     # Training performance graph
-│   └── app_ui.png            # App interface screenshot
-├── json/
-│   └── label_map.json        # Mapping of class indices to plant names
-├── requirements.txt          # Python package requirements
-└── data/
-    ├── train/
-    ├── val/
-    └── test/
-🛠️ Installation & Requirements
-Python Environment:
+├── model/ # AI models (plant + disease)
+├── images/ # Screenshots for README
+├── json/ # Mapping for plant names
+├── train.py # AI training script
+├── test.py # Optional testing script
+└── README.md # This file
 
-We recommend using a virtual environment:
+---
 
-python3 -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-Install Required Libraries:
+## 🏗️ System Overview
 
-pip install -r requirements.txt
-Example requirements.txt
+PlanTonic has 3 main parts:
 
-tensorflow==2.13.0
-numpy
-pillow
-scikit-learn
-matplotlib
-opencv-python
-🧪 Running the Training
-Make sure your dataset is placed correctly inside the data/ folder.
+1. **Mobile App** – where the user takes a photo
+2. **Backend Server** – analyzes the image using AI
+3. **AI Models** – recognize the plant, check for disease, and generate care tips
 
-python train.py
-This script:
+The app sends the photo to the server. The server runs two AI models:
+- One to recognize the plant
+- One to detect disease
 
-Preprocesses images (resizing, normalization)
-Loads augmented data via ImageDataGenerator
-Trains a MobileNetV3Large model with your configuration
-Saves the model and converts it to TFLite
-📲 TFLite Deployment
-The trained model plant_model.tflite can be easily integrated into Android or iOS apps using TensorFlow Lite APIs.
+Then it uses a language model (like ChatGPT) to create easy-to-understand advice.
 
-🖼️ Screenshots
-Model Training Accuracy	App Interface
-📄 License
-This project is licensed under the MIT License.
+---
+
+## ⚠️ Limitations & Future Work
+
+- Currently supports iOS only (Android version is planned)
+- Works best with clear, close-up photos
+- Requires internet connection for disease detection and care generation
+- We plan to expand the plant and disease database in future versions
+
+---
+
+## ✅ Summary
+
+PlanTonic is a blend of nature and technology. By turning a simple photo into knowledge, it helps people connect with their plants, take better care of them, and enjoy a greener life 🌿.
+
+---
+
+## 👥 Team
+
+This project was developed as a Senior Project at Atılım University, Spring 2025.
+
+Team Members:
+- Atakan Apan
+- Dilan Kaçar
+- Ekin Çakmak
+- Mehmed Emin Andaç
+- Sarya Buluş
+- Yalçın Yağız Korkmaz
+
+Supervisor: Assoc. Prof. Dr. Cansu Çiğdem Ekin
+
+---
+
+## 📄 License
+
+Open for non-commercial use and educational purposes.  
+Please contact the team for contributions or questions.
+
+
 
